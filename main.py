@@ -1,9 +1,12 @@
-import github_repo_parser as rp
+#import github_repo_parser as rp
+import githubrp_threaded as rp
+import time
 
 def main():
     # Collect data around GLFW repo.
-    # Max of parsed repos = 30
-    summary = rp.collectData('/glfw/glfw', 30)
+    # Target number of parsed repos = 30
+    
+    summary = rp.collectData('/glfw/glfw', 30, 4)
     
     # Make average from stored values
     summary.finalize()
