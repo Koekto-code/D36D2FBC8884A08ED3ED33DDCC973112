@@ -5,7 +5,7 @@ import time
 def main():
     tpoint1 = time.time()
     # Collect data around GLFW repo.
-    # Target number of parsed repos = 30
+    # Target number of parsed repos = 80
     # Threads = 8
     summary = rp.collectData('/glfw/glfw', 80, 8)
     tpoint2 = time.time()
