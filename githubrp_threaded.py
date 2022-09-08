@@ -23,11 +23,11 @@ def parseGithubRepo(repo_name: str, showProgress: bool):
     lang_html_elem = soup.find(text="Languages")
     if lang_html_elem:
         lang_html_elem = lang_html_elem.parent
-        if (not lang_html_elem):
-            print("FAIL")
+        if not lang_html_elem:
+            raise Exception("Failed to get parent of HTML element")
         lang_html_elem = lang_html_elem.parent
-        if (not lang_html_elem):
-            print("FAIL_FAIL")
+        if not lang_html_elem:
+            raise Exception("Failed to get parent of HTML element")
          
         lang_dict = {}
         lang_soup = BeautifulSoup(str(lang_html_elem), features="html.parser") \
